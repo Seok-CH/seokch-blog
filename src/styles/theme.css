@@ -1,0 +1,14 @@
+:root {
+  --color-primary: var(--color-sky-800);
+  --color-text: var(--color-slate-800);
+  --color-text-light: var(--color-gray-600);
+  --color-heading: var(--color-gray-800);
+  --color-heading-black: var(--color-black);
+  --color-accent: var(--color-indigo-100);
+}
+
+body[data-theme='light'] {
+}
+
+body[data-theme='dark'] {
+}
