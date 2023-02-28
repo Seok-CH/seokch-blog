@@ -21,7 +21,6 @@ module.exports = {
     },
   },
   plugins: [
-    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
