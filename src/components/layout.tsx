@@ -2,34 +2,19 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 
 type Props = {
-  location: {
-    pathname: string;
-  };
   title: string;
   children: React.ReactNode;
 };
 
-const Layout = ({ location, title, children }: Props) => {
-  const rootPath = `/`;
-  const isRootPath = location.pathname === rootPath;
-  let header;
-
-  if (isRootPath) {
-    header = (
-      <h1 className='main-heading'>
-        <Link to='/'>{title}</Link>
-      </h1>
-    );
-  } else {
-    header = (
-      <Link className='header-link-home' to='/'>
-        {title}
-      </Link>
-    );
-  }
+const Layout = ({ title, children }: Props) => {
+  const header = (
+    <h1 className='main-heading'>
+      <Link to='/'>{title}</Link>
+    </h1>
+  );
 
   return (
-    <div className='global-wrapper' data-is-root-path={isRootPath}>
+    <div className='global-wrapper'>
       <header className='global-header'>{header}</header>
       <main>{children}</main>
       <footer>

@@ -6,12 +6,11 @@ import Seo from '../components/seo';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
   data: { previous, next, site, markdownRemark: post },
-  location,
 }) => {
   const siteTitle = site?.siteMetadata?.title || `Title`;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout title={siteTitle}>
       <article
         className='blog-post'
         itemScope
