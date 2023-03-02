@@ -1,36 +1,32 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, PageProps } from 'gatsby';
 
-import Bio from '../components/bio';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
+const BlogIndexPage: React.FC<PageProps<Queries.BlogIndexPageQuery>> = ({
+  data,
+  location,
+}) => {
+  const siteTitle = data.site?.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <p>no content</p>
       </Layout>
     );
   }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
-          const title = post.frontmatter.title || post.fields.slug;
+          const title = post.frontmatter?.title || post.fields?.slug;
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields?.slug}>
               <article
                 className='post-list-item'
                 itemScope
@@ -38,16 +34,17 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.fields.slug} itemProp='url'>
+                    <Link to={post.fields?.slug || ''} itemProp='url'>
                       <span itemProp='headline'>{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post.frontmatter?.date}</small>
                 </header>
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
+                      __html:
+                        post.frontmatter?.description || post.excerpt || '',
                     }}
                     itemProp='description'
                   />
@@ -61,7 +58,7 @@ const BlogIndex = ({ data, location }) => {
   );
 };
 
-export default BlogIndex;
+export default BlogIndexPage;
 
 /**
  * Head export to define metadata for the page
@@ -71,7 +68,7 @@ export default BlogIndex;
 export const Head = () => <Seo title='All posts' />;
 
 export const pageQuery = graphql`
-  {
+  query BlogIndexPage {
     site {
       siteMetadata {
         title
