@@ -1,5 +1,5 @@
 // custom CSS styles
-import './scr/styles/normalize.css';
+import './src/styles/normalize.css';
 import './src/styles/base/_color.css';
 import './src/styles/base/_layout.css';
 import './src/styles/base/_spacing.css';
