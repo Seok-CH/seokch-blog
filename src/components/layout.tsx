@@ -1,22 +1,15 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import Header from './Header';
 
 type Props = {
-  title: string;
   children: React.ReactNode;
 };
 
-const Layout = ({ title, children }: Props) => {
-  const header = (
-    <h1 className='main-heading'>
-      <Link to='/'>{title}</Link>
-    </h1>
-  );
-
+const Layout = ({ children }: Props) => {
   return (
     <div className='global-wrapper'>
-      <header className='global-header'>{header}</header>
-      <main>{children}</main>
+      <Header />
+      <main className='main-wrapper'>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}

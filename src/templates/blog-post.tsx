@@ -5,12 +5,10 @@ import Layout from '../components/layout';
 import Seo from '../components/seo';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
-  data: { previous, next, site, markdownRemark: post },
+  data: { previous, next, markdownRemark: post },
 }) => {
-  const siteTitle = site?.siteMetadata?.title || `Title`;
-
   return (
-    <Layout title={siteTitle}>
+    <Layout>
       <article
         className='blog-post'
         itemScope

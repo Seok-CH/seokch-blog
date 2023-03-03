@@ -7,19 +7,18 @@ import Seo from '../components/seo';
 const BlogIndexPage: React.FC<PageProps<Queries.BlogIndexPageQuery>> = ({
   data,
 }) => {
-  const siteTitle = data.site?.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
 
   if (posts.length === 0) {
     return (
-      <Layout title={siteTitle}>
+      <Layout>
         <p>no content</p>
       </Layout>
     );
   }
 
   return (
-    <Layout title={siteTitle}>
+    <Layout>
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
           const title = post.frontmatter?.title || post.fields?.slug;
