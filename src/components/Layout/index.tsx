@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Footer from './Footer';
 import Header from './Header';
 
 type Props = {
@@ -10,11 +11,7 @@ const Layout = ({ children }: Props) => {
     <div className='global-wrapper'>
       <Header />
       <main className='main-wrapper'>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href='https://www.gatsbyjs.com'>Gatsby</a>
-      </footer>
+      <Footer />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, graphql, PageProps } from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Seo from '../components/seo';
 
 const BlogIndexPage: React.FC<PageProps<Queries.BlogIndexPageQuery>> = ({
@@ -82,6 +82,11 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(width: 150, height: 150)
+            }
+          }
         }
       }
     }
