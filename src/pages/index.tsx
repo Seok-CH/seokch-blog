@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, graphql, PageProps } from 'gatsby';
-
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Seo from '../components/seo';
 
@@ -30,23 +30,32 @@ const BlogIndexPage: React.FC<PageProps<Queries.BlogIndexPageQuery>> = ({
                 itemScope
                 itemType='http://schema.org/Article'
               >
-                <header>
-                  <h2>
-                    <Link to={post.fields?.slug || ''} itemProp='url'>
-                      <span itemProp='headline'>{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter?.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        post.frontmatter?.description || post.excerpt || '',
-                    }}
-                    itemProp='description'
-                  />
-                </section>
+                <GatsbyImage
+                  className='post-list-item-image'
+                  image={
+                    post.frontmatter?.thumbnail?.childImageSharp
+                      ?.gatsbyImageData
+                  }
+                />
+                <div>
+                  <header>
+                    <h2>
+                      <Link to={post.fields?.slug || ''} itemProp='url'>
+                        <span itemProp='headline'>{title}</span>
+                      </Link>
+                    </h2>
+                    <small>{post.frontmatter?.date}</small>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          post.frontmatter?.description || post.excerpt || '',
+                      }}
+                      itemProp='description'
+                    />
+                  </section>
+                </div>
               </article>
             </li>
           );
