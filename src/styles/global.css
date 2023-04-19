@@ -168,3 +168,8 @@ a:focus {
 hr {
   margin: var(--spacing-8) 0;
 }
+
+pre,
+code {
+  font-family: var(--fontFamily-mono) !important;
+}
