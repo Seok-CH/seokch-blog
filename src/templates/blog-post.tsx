@@ -3,7 +3,6 @@ import { Link, graphql, PageProps, HeadFC } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Seo from '../components/seo';
-import { GatsbyImage } from 'gatsby-plugin-image';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
   data: { previous, next, markdownRemark: post },
@@ -15,10 +14,6 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
         itemScope
         itemType='http://schema.org/Article'
       >
-        <GatsbyImage
-          className='post-list-item-image'
-          image={post.frontmatter?.thumbnail?.childImageSharp?.gatsbyImageData}
-        />
         <header>
           <h1 itemProp='headline'>{post?.frontmatter?.title}</h1>
           <p>{post?.frontmatter?.date}</p>
@@ -94,11 +89,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

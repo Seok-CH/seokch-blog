@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link, graphql, PageProps } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Seo from '../components/seo';
 
@@ -26,13 +25,6 @@ const BlogIndexPage: React.FC<PageProps<Queries.BlogIndexPageQuery>> = ({
           return (
             <li key={post.fields?.slug} className='post-list-item'>
               <article itemScope itemType='http://schema.org/Article'>
-                <GatsbyImage
-                  className='post-list-item-image'
-                  image={
-                    post.frontmatter?.thumbnail?.childImageSharp
-                      ?.gatsbyImageData
-                  }
-                />
                 <div>
                   <header>
                     <h2>
@@ -87,11 +79,6 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(width: 150, height: 150)
-            }
-          }
         }
       }
     }
