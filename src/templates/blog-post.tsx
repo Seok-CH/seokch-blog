@@ -33,10 +33,10 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
         <hr />
         <Giscus
           id='comments'
-          repo={(process.env.REACT_APP_REPO as `${string}/${string}`) || ''}
-          repoId={process.env.REACT_APP_REPO_ID || ''}
-          category={process.env.REACT_APP_CATEGORY}
-          categoryId={process.env.REACT_APP_CATEGORY_ID}
+          repo='chadseok/chadseok-blog'
+          repoId='R_kgDOJCSyTQ'
+          category='general'
+          categoryId='DIC_kwDOJCSyTc4CV44w'
           strict='0'
           mapping='og:title'
           reactionsEnabled='1'
