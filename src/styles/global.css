@@ -164,3 +164,7 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
+
+hr {
+  margin: var(--spacing-8) 0;
+}

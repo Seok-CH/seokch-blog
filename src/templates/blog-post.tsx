@@ -23,7 +23,6 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
           itemProp='articleBody'
         />
         <hr />
-        <footer></footer>
       </article>
       <nav className='blog-post-nav'>
         <ul
