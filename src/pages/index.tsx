@@ -43,6 +43,13 @@ const BlogIndexPage: React.FC<PageProps<Queries.BlogIndexPageQuery>> = ({
                       itemProp='description'
                     />
                   </section>
+                  <div className='post-tag'>
+                    {post.frontmatter?.tags?.map((tag) => (
+                      <span className='post-tag-item' key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </article>
             </li>
@@ -79,6 +86,7 @@ export const pageQuery = graphql`
           date(formatString: "YYYY[년] MM[월] DD[일]")
           title
           description
+          tags
         }
       }
     }

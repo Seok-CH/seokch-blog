@@ -1,6 +1,7 @@
 ---
 title: Compound Component Pattern에 대해 알아보기
 date: '2022-10-01T22:12:03.284Z'
+tags: ['react', 'design-pattern']
 ---
 
 ---

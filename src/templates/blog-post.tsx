@@ -17,6 +17,13 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
         <header>
           <h1 itemProp='headline'>{post?.frontmatter?.title}</h1>
           <p>{post?.frontmatter?.date}</p>
+          <div className='post-tag'>
+            {post?.frontmatter?.tags?.map((tag) => (
+              <span className='post-tag-item' key={tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post?.html || '' }}
@@ -88,6 +95,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY[년] MM[월] DD[일]")
         description
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
