@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, graphql, PageProps, HeadFC } from 'gatsby';
+import Giscus from '@giscus/react';
 
 import Layout from '../components/Layout';
 import Seo from '../components/seo';
@@ -30,6 +31,21 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
           itemProp='articleBody'
         />
         <hr />
+        <Giscus
+          id='comments'
+          repo={(process.env.REPO as `${string}/${string}`) || ''}
+          repoId={process.env.REPO_ID || ''}
+          category={process.env.CATEGORY}
+          categoryId={process.env.CATEGORY_ID}
+          strict='0'
+          mapping='og:title'
+          reactionsEnabled='1'
+          emitMetadata='0'
+          inputPosition='top'
+          theme='light'
+          lang='ko'
+          loading='lazy'
+        />
       </article>
       <nav className='blog-post-nav'>
         <ul
