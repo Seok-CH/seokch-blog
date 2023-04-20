@@ -10,15 +10,15 @@
 module.exports = {
   graphqlTypegen: true,
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Chadseok Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `chadseok`,
+      summary: `curious developer who lives in korea, South.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `chadseok blog about web frontend`,
+    siteUrl: `https://chadseok.blog/`,
     social: {
-      twitter: `kylemathews`,
+      github: 'chadseok',
     },
   },
   plugins: [
@@ -131,7 +131,7 @@ module.exports = {
               }
             }`,
             output: '/rss.xml',
-            title: 'Gatsby Starter Blog RSS Feed',
+            title: 'Chadseok Blog RSS Feed',
           },
         ],
       },
@@ -139,8 +139,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `Gatsby`,
+        name: `Chadseok Blog`,
+        short_name: `Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
