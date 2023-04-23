@@ -157,7 +157,7 @@ components
 
 큰 프로젝트의 경우에는 이 components 구조가 depth가 너무 깊다고 판단이 들 수 있다. 이 경우에는 components 폴더로 묶지 않고 features와 pages를 밖으로 빼낼 수도 있다.
 
-```
+```{2-3}
 src
  ┣ features
  ┣ pages

@@ -16,7 +16,7 @@ _그런데 이 상황에서 체크박스 기능이 포함된 Dialog를 개발해
 
 대부분 체크박스가 포함된 새로운 Dialog를 만들고 싶지 않기 때문에 체크박스와 관련된 props를 새로 생성할 것이다. 그리고 Dialog컴포넌트 내부에서는 다른 UI를 보여주기 위해 props에 대한 조건문을 작성할 것이다.
 
-```tsx
+```tsx{4-7,15-21}
 <Dialog
   title={'title'}
   description={'description'}
@@ -112,7 +112,7 @@ function useMenuContext() {
 
 서브 컴포넌트들은 Context API로 전달받은 정보로 로직을 작성하고 최종적으로는 최상위 `Menu`객체의 프로퍼티로 등록하여 Menu를 import하면 서브 컴포넌트도 사용할 수 있게끔 한다
 
-```tsx
+```tsx{15-17}
 function Button(props: React.PropsWithChildren) {
   const { toggle } = useMenuContext();
   return <button onClick={toggle}>{props.children}</button>;
