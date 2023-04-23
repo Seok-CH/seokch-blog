@@ -110,6 +110,15 @@
   margin-bottom: var(--spacing-8);
 }
 
+.gatsby-highlight-code-line {
+  background-color: #445054;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
 .post-tag {
   display: flex;
   gap: var(--spacing-4);
