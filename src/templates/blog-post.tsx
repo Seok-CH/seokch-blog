@@ -26,6 +26,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostBySlugQuery>> = ({
             ))}
           </div>
         </header>
+        <hr />
         <section
           dangerouslySetInnerHTML={{ __html: post?.html || '' }}
           itemProp='articleBody'

@@ -4,8 +4,6 @@ date: '2022-10-01T22:12:03.284Z'
 tags: ['react', 'design-pattern']
 ---
 
----
-
 리액트 프로젝트에서 큰 단위의 복합적인 UI Components(Modal, Dialog)들을 개발하다보면 이 컴포넌트들을 상황에 따라 재사용하기 위해 세부적인 내용은 **props**를 통해서 넘겨주는 경우가 많다.
 
 예를 들면 다음과 같은 title과 description만으로 구성된 Dialog가 있다. 이 Dialog도 다양한 곳에서 재사용되기 위해 title과 description과 같은 변할 수 있는 값은 props로 받고 있다.
