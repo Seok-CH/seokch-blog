@@ -11,12 +11,12 @@ const Header = () => {
           <h1 className='logo-name'>Chad Blog</h1>
         </Link>
         <div className='divider' />
-        {/* <Link to='/category' className='nav-item'>
-          Category
+        <Link to='/blog' className='nav-item'>
+          Blog
         </Link>
-        <Link to='/about' className='nav-item'>
-          About
-        </Link> */}
+        <Link to='/book' className='nav-item'>
+          Book
+        </Link>
       </nav>
     </header>
   );
