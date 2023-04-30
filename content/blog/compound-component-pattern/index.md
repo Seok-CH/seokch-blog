@@ -2,6 +2,7 @@
 title: Compound Component Pattern에 대해 알아보기
 date: '2022-10-01T22:12:03.284Z'
 tags: ['react', 'design-pattern']
+type: 'blog'
 ---
 
 리액트 프로젝트에서 큰 단위의 복합적인 UI Components(Modal, Dialog)들을 개발하다보면 이 컴포넌트들을 상황에 따라 재사용하기 위해 세부적인 내용은 **props**를 통해서 넘겨주는 경우가 많다.
