@@ -1,0 +1,34 @@
+.blog-post {
+  padding: var(--spacing-8) 0;
+}
+
+.blog-post header h1 {
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+}
+
+.blog-post header p {
+  font-size: var(--fontSize-2);
+  font-family: var(--font-heading);
+  margin-bottom: var(--spacing-4);
+}
+
+.blog-post-nav ul {
+  margin: var(--spacing-0);
+}
+
+.gatsby-highlight {
+  margin-bottom: var(--spacing-8);
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  font-size: 0.9rem;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #445054;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
